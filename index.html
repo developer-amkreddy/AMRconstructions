@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>AMR Constructions — Building Excellence Since 1994</title>
+  <meta name="description"
+    content="AMR Constructions — 30 years of delivering world-class residential, commercial and industrial projects. Trusted craftsmanship, cutting-edge engineering, and uncompromising quality." />
+  <meta name="keywords"
+    content="AMR Constructions, construction company, residential construction, commercial construction, infrastructure, 30 years experience" />
+  <meta name="author" content="AMR Constructions" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AMR Constructions — Building Excellence Since 1994" />
+  <meta property="og:description"
+    content="30 years of world-class construction. Residential, commercial, industrial." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Fonts (preconnect for speed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" />
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <!-- ── Inline loader dismiss: runs immediately, zero dependencies ── -->
+  <script>
+    // Lock scroll while loader shows
+    document.documentElement.style.overflow = 'hidden';
+    // Hide loader after animation completes (3 s) no matter what
+    setTimeout(function () {
+      var l = document.getElementById('loader');
+      if (l) { l.style.opacity = '0'; l.style.visibility = 'hidden'; l.style.pointerEvents = 'none'; }
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }, 3000);
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     SPLASH LOADER
+══════════════════════════════════════════════════════════════ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-logo">AMR <span>Constructions</span></div>
+    <div class="loader-tagline">Building Excellence Since 1994</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="AMR Constructions Home">
+        <div class="nav-logo-mark">AMR</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">AMR Constructions</span>
+          <span class="nav-logo-sub">Est. 1994 &bull; 30 Years Strong</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Get a Quote</a>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+
+    <!-- Background Slideshow -->
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide active" style="background-image: url('assets/images/hero.png')"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/project_commercial.png')"></div>
+      <div class="hero-slide" style="background-image: url('assets/images/project_industrial.png')"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Est. 1994 &mdash; 30 Years of Craftsmanship</div>
+
+        <h1 class="hero-title">
+          We Build the<br>
+          <span class="gold-highlight">Future</span> You<br>
+          <span class="line-2">Envision.</span>
+        </h1>
+
+        <p class="hero-desc">
+          From landmark commercial towers to bespoke residences, AMR Constructions delivers
+          projects that stand as testaments to precision engineering, timeless design, and
+          uncompromising quality — for over three decades.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary" id="hero-view-projects">
+            Explore Our Work <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-secondary" id="hero-contact">
+            Start Your Project <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">
+              <span data-target="500" data-suffix="+">500+</span>
+            </div>
+            <div class="hero-stat-label">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">
+              <span data-target="30" data-suffix=" Yrs">30 Yrs</span>
+            </div>
+            <div class="hero-stat-label">Industry Experience</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">
+              <span data-target="98" data-suffix="%">98%</span>
+            </div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">
+              <span data-target="12" data-suffix="+">12+</span>
+            </div>
+            <div class="hero-stat-label">States Covered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Dots -->
+    <div class="hero-dots" aria-label="Slideshow navigation">
+      <button class="hero-dot active" aria-label="Slide 1"></button>
+      <button class="hero-dot" aria-label="Slide 2"></button>
+      <button class="hero-dot" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})"
+      role="button" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     TICKER BAR
+══════════════════════════════════════════════════════════════ -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-inner" id="ticker-inner">
+      <!-- Items doubled for infinite loop -->
+      <span class="ticker-item"><span class="ticker-dot"></span> Residential Construction</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Commercial Projects</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Industrial Builds</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Interior & Fit-Out</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Project Management</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Structural Engineering</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Renovation & Restoration</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Green Building</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Residential Construction</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Commercial Projects</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Industrial Builds</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Interior & Fit-Out</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Project Management</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Structural Engineering</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Renovation & Restoration</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Green Building</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+
+      <!-- Centered Section Header -->
+      <div style="text-align:center; margin-bottom:60px;" class="reveal">
+        <div class="section-eyebrow" style="justify-content:center;">Who We Are</div>
+        <h2 class="section-title">Three Decades of Building Trust.</h2>
+        <div class="divider-gold" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Image Column -->
+        <div class="about-image-stack reveal">
+          <img src="assets/images/about_team.png" alt="AMR Constructions team on site" class="about-img-main" />
+          <div class="about-badge">
+            <div class="about-badge-num">30</div>
+            <div class="about-badge-label">Years of<br>Excellence</div>
+          </div>
+        </div>
+
+        <!-- Text Column -->
+        <div class="about-text reveal reveal-delay-2"
+          style="display:flex; flex-direction:column; justify-content:center;">
+
+          <p class="about-body">
+            Founded in 1994, <strong>AMR Constructions</strong> has grown from a local building firm into
+            one of the region's most respected construction groups. Over 30 years, we have shaped
+            skylines, created communities, and built infrastructure that endures.
+          </p>
+          <p class="about-body" style="margin-top:16px;">
+            Our philosophy is simple: every project — from a single-family home to a multi-storey
+            commercial complex — deserves the highest standard of craftsmanship, safety, and
+            on-time delivery. We don't just build structures; we build lasting relationships.
+          </p>
+
+          <!-- Value Cards -->
+          <div class="about-values">
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="value-content">
+                <div class="value-title">Award-Winning Quality</div>
+                <div class="value-desc">Nationally recognised for construction excellence and innovative engineering.
+                </div>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="value-content">
+                <div class="value-title">Safety First</div>
+                <div class="value-desc">Zero-compromise safety protocols with an industry-leading safety record.</div>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-stopwatch"></i></div>
+              <div class="value-content">
+                <div class="value-title">On-Time Delivery</div>
+                <div class="value-desc">96% of our projects delivered on schedule, protecting your investment timeline.
+                </div>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="value-content">
+                <div class="value-title">Sustainable Builds</div>
+                <div class="value-desc">Committed to green construction practices and eco-certified materials.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     SERVICES SECTION
+══════════════════════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+
+      <div class="services-header reveal">
+        <div class="section-eyebrow" style="color:var(--gold); justify-content:center;">What We Build</div>
+        <h2 class="section-title light">Our Services &amp; Capabilities</h2>
+        <div class="divider-gold"></div>
+        <p class="section-subtitle light">
+          From concept to completion, AMR Constructions offers a comprehensive suite of
+          construction and project management services tailored to your vision.
+        </p>
+      </div>
+
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">🏠</div>
+          <h3 class="service-title">Residential Construction</h3>
+          <p class="service-desc">
+            Custom villas, luxury apartments, and housing developments crafted with
+            meticulous attention to design, durability, and lifestyle needs.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon-wrap">🏢</div>
+          <h3 class="service-title">Commercial &amp; Retail</h3>
+          <p class="service-desc">
+            Office towers, retail complexes, and mixed-use developments designed to
+            maximise function, footfall, and long-term asset value.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon-wrap">🏭</div>
+          <h3 class="service-title">Industrial &amp; Warehouse</h3>
+          <p class="service-desc">
+            State-of-the-art manufacturing plants, logistics hubs, and warehouses
+            engineered for operational efficiency and rapid deployment.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon-wrap">🌉</div>
+          <h3 class="service-title">Infrastructure &amp; Civil</h3>
+          <p class="service-desc">
+            Roads, bridges, drainage systems, and public infrastructure built to
+            government standards for lasting societal impact.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon-wrap">🪟</div>
+          <h3 class="service-title">Interior Fit-Out</h3>
+          <p class="service-desc">
+            Premium interiors, turnkey fit-outs, and renovation projects that
+            transform raw spaces into inspiring, functional environments.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon-wrap">📋</div>
+          <h3 class="service-title">Project Management</h3>
+          <p class="service-desc">
+            End-to-end project management, cost control, scheduling, and quality
+            assurance — keeping your project on budget and on time.
+          </p>
+          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
+              style="font-size:0.7rem"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     PROJECTS / PORTFOLIO
+══════════════════════════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="projects-header">
+        <div class="reveal">
+          <div class="section-eyebrow">Our Portfolio</div>
+          <h2 class="section-title">Signature Projects</h2>
+          <div class="divider-gold"></div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs reveal reveal-delay-2">
+          <button class="filter-tab active" data-filter="all" id="filter-all">All</button>
+          <button class="filter-tab" data-filter="residential" id="filter-residential">Residential</button>
+          <button class="filter-tab" data-filter="commercial" id="filter-commercial">Commercial</button>
+          <button class="filter-tab" data-filter="industrial" id="filter-industrial">Industrial</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Featured Project -->
+        <div class="project-card featured reveal" data-category="commercial">
+          <img src="assets/images/project_commercial.png" alt="Skyline Business Tower" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Commercial</span>
+            <h3 class="project-title">Skyline Business Tower<br>Phase II</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Chennai &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2022 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-ruler-combined"></i> 2,40,000 sq.ft
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay-1" data-category="residential">
+          <img src="assets/images/project_residential.png" alt="Prestige Villas" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Residential</span>
+            <h3 class="project-title">Prestige<br>Villas, Phase I</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Bangalore &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2021 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-house"></i> 48 Villas
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal reveal-delay-2" data-category="industrial">
+          <img src="assets/images/project_industrial.png" alt="Industrial Warehouse" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Industrial</span>
+            <h3 class="project-title">Apex Logistics<br>Hub</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Pune &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2023 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-warehouse"></i> 4,50,000 sq.ft
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal reveal-delay-1" data-category="residential">
+          <img src="assets/images/hero.png" alt="AMR Towers Residences" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Residential</span>
+            <h3 class="project-title">AMR Towers<br>Residences</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Hyderabad &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2020 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-building"></i> G+24 Floors
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 5 (New - fills Row 2) -->
+        <div class="project-card reveal reveal-delay-2" data-category="industrial">
+          <img src="assets/images/project_industrial.png" alt="Pinnacle Tech Park" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Industrial</span>
+            <h3 class="project-title">Pinnacle Tech<br>Park</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Gurugram &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2024 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-warehouse"></i> 5,20,000 sq.ft
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 6 (Spans 2 cols, begins Row 3) -->
+        <div class="project-card featured reveal" data-category="commercial">
+          <img src="assets/images/about_team.png" alt="Grand Retail Mall" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Commercial</span>
+            <h3 class="project-title">Grand Central<br>Retail Mall</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Mumbai &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2019 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-shop"></i> 6,00,000 sq.ft
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 7 (New - fills Row 3) -->
+        <div class="project-card reveal reveal-delay-2" data-category="commercial">
+          <img src="assets/images/project_commercial.png" alt="Horizon Business Center" class="project-img" />
+          <div class="project-overlay">
+            <span class="project-tag">Commercial</span>
+            <h3 class="project-title">Horizon Business<br>Center</h3>
+            <p class="project-meta">
+              <i class="fa-solid fa-location-dot"></i> Bangalore &nbsp;&bull;&nbsp;
+              <i class="fa-regular fa-calendar"></i> 2022 &nbsp;&bull;&nbsp;
+              <i class="fa-solid fa-building"></i> 1,30,000 sq.ft
+            </p>
+          </div>
+          <div class="project-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:52px;" class="reveal">
+        <a href="#contact" class="btn-primary" id="view-all-projects">
+          Discuss Your Project <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════════════════════════════ -->
+  <section id="why-us">
+    <div class="container">
+      <div class="why-grid">
+
+        <!-- Left — Staggered Images -->
+        <div class="why-images-wrap reveal">
+          <div class="why-img-main">
+            <img src="assets/images/project_commercial.png" alt="Commercial Project">
+          </div>
+          <div class="why-img-sub">
+            <img src="assets/images/project_industrial.png" alt="Industrial Project">
+          </div>
+          <div class="why-badge-card">
+            <div class="badge-num">25B+</div>
+            <div class="badge-text">Project Value (INR)</div>
+          </div>
+        </div>
+
+        <!-- Right — Content & Features -->
+        <div class="why-right reveal reveal-delay-2">
+          <div class="section-eyebrow">Why AMR</div>
+          <h2 class="section-title">The Foundation of<br>Excellence.</h2>
+          <p class="section-subtitle">
+            We don't just build structures; we engineer solutions. Our three-decade legacy is defined by an
+            uncompromising commitment to quality, safety, and operational excellence.
+          </p>
+
+          <div class="why-features-list">
+
+            <!-- Feature 1 -->
+            <div class="why-feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Uncompromising Safety</h4>
+                <p>Zero LTI since 2010. We maintain the highest standards of safety across all project sites, ensuring
+                  the well-being of our 1,200+ personnel.</p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="why-feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-helmet-safety"></i>
+              </div>
+              <div class="feature-text">
+                <h4>End-to-End Execution</h4>
+                <p>From structural engineering to fine finishing, our 100% in-house capabilities and fleet of 400+
+                  machineries give us total control over quality.</p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="why-feature-item">
+              <div class="feature-icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="feature-text">
+                <h4>On-Time Delivery</h4>
+                <p>A proven track record of 96% on-time project completion, driven by rigorous management and 24/7
+                  advanced scheduling methodologies.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     PROCESS TIMELINE
+══════════════════════════════════════════════════════════════ -->
+  <section id="process">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <div class="section-eyebrow" style="justify-content:center; color:var(--gold)">How We Work</div>
+        <h2 class="section-title light">Our Proven Process</h2>
+        <div class="divider-gold" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+
+      <div class="process-steps">
+
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Consultation</h3>
+          <p class="step-desc">We listen. Deep discovery sessions to understand your vision, budget, and timeline.</p>
+        </div>
+
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Design &amp; Plan</h3>
+          <p class="step-desc">Architectural design, structural engineering, and full project planning with 3D
+            visualisation.</p>
+        </div>
+
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Approvals</h3>
+          <p class="step-desc">We manage all permits, regulatory approvals, and statutory clearances end-to-end.</p>
+        </div>
+
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Construction</h3>
+          <p class="step-desc">Precision execution by our skilled workforce with real-time progress reporting.</p>
+        </div>
+
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-number">05</div>
+          <h3 class="step-title">Handover</h3>
+          <p class="step-desc">Snagging, quality checks, and a comprehensive walkthrough before keys are handed over.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════════════ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:10px;">
+        <div class="section-eyebrow" style="justify-content:center;">Client Stories</div>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="divider-gold" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+    </div>
+
+    <div class="testimonials-wrap">
+      <div class="testimonials-track" id="testimonials-track">
+
+        <!-- 8 cards repeated for infinite scroll -->
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"AMR delivered our 48-villa project three weeks ahead of schedule. The craftsmanship was
+            absolutely exceptional — every detail was perfect. Highly recommend them for any residential project."</p>
+          <div class="test-author">
+            <div class="test-avatar">RS</div>
+            <div>
+              <div class="test-name">Rajesh Sharma</div>
+              <div class="test-role">MD, Prestige Developers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"We've worked with many construction firms over the years. AMR Constructions stands head
+            and shoulders above the rest — their project management is world-class and communication is transparent."
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">PK</div>
+            <div>
+              <div class="test-name">Priya Krishnamurthy</div>
+              <div class="test-role">CEO, Apex Logistics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"Our commercial tower was a complex project, but AMR handled every challenge with
+            professionalism and expertise. The quality of the finish exceeded our expectations considerably."</p>
+          <div class="test-author">
+            <div class="test-avatar">AM</div>
+            <div>
+              <div class="test-name">Arun Mehta</div>
+              <div class="test-role">Chairman, Skyline Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"From day one, AMR understood our vision. Their design-to-delivery process is seamless
+            and their team is a pleasure to work with. Our new retail space is stunning — footfall has increased by
+            40%."</p>
+          <div class="test-author">
+            <div class="test-avatar">SN</div>
+            <div>
+              <div class="test-name">Sunita Nair</div>
+              <div class="test-role">Director, Grand Retail India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"Safety is paramount in our industry, and AMR's safety record is impeccable. Their
+            workforce is trained, disciplined, and genuinely professional. Outstanding execution top-to-bottom."</p>
+          <div class="test-author">
+            <div class="test-avatar">VR</div>
+            <div>
+              <div class="test-name">Vikram Rao</div>
+              <div class="test-role">Project Director, Infra Corp</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"My dream home was built by AMR and it's everything I imagined and more. They respected
+            our budget, offered brilliant suggestions, and delivered within the promised time. Simply the best."</p>
+          <div class="test-author">
+            <div class="test-avatar">DG</div>
+            <div>
+              <div class="test-name">Divya Gupta</div>
+              <div class="test-role">Homeowner, Prestige Villas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate for infinite scroll -->
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"AMR delivered our 48-villa project three weeks ahead of schedule. The craftsmanship was
+            absolutely exceptional — every detail was perfect. Highly recommend them for any residential project."</p>
+          <div class="test-author">
+            <div class="test-avatar">RS</div>
+            <div>
+              <div class="test-name">Rajesh Sharma</div>
+              <div class="test-role">MD, Prestige Developers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"We've worked with many construction firms over the years. AMR Constructions stands head
+            and shoulders above the rest — their project management is world-class and communication is transparent."
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">PK</div>
+            <div>
+              <div class="test-name">Priya Krishnamurthy</div>
+              <div class="test-role">CEO, Apex Logistics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"Our commercial tower was a complex project, but AMR handled every challenge with
+            professionalism and expertise. The quality of the finish exceeded our expectations considerably."</p>
+          <div class="test-author">
+            <div class="test-avatar">AM</div>
+            <div>
+              <div class="test-name">Arun Mehta</div>
+              <div class="test-role">Chairman, Skyline Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"From day one, AMR understood our vision. Their design-to-delivery process is seamless
+            and their team is a pleasure to work with. Our new retail space is stunning — footfall has increased by
+            40%."</p>
+          <div class="test-author">
+            <div class="test-avatar">SN</div>
+            <div>
+              <div class="test-name">Sunita Nair</div>
+              <div class="test-role">Director, Grand Retail India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"Safety is paramount in our industry, and AMR's safety record is impeccable. Their
+            workforce is trained, disciplined, and genuinely professional. Outstanding execution top-to-bottom."</p>
+          <div class="test-author">
+            <div class="test-avatar">VR</div>
+            <div>
+              <div class="test-name">Vikram Rao</div>
+              <div class="test-role">Project Director, Infra Corp</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="test-quote">"My dream home was built by AMR and it's everything I imagined and more. They respected
+            our budget, offered brilliant suggestions, and delivered within the promised time. Simply the best."</p>
+          <div class="test-author">
+            <div class="test-avatar">DG</div>
+            <div>
+              <div class="test-name">Divya Gupta</div>
+              <div class="test-role">Homeowner, Prestige Villas</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     TEAM SECTION
+══════════════════════════════════════════════════════════════ -->
+  <section id="team">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom: 4px;">
+        <div class="section-eyebrow" style="justify-content:center;">Leadership</div>
+        <h2 class="section-title">Meet the People<br>Behind the Projects</h2>
+        <div class="divider-gold" style="margin:20px auto 0;"></div>
+        <p class="section-subtitle" style="margin: 16px auto 0; text-align:center;">
+          Our leadership team brings together decades of expertise across construction,
+          engineering, design, and project management.
+        </p>
+      </div>
+
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+          <div class="team-photo-wrap">
+            <div class="team-initials">AM</div>
+            <div class="team-overlay">
+              <a href="#" class="team-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:ceo@amrconstructions.com" class="team-social-btn" aria-label="Email"><i
+                  class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Anil</div>
+            <div class="team-role">Founder &amp; Chairman</div>
+            <p class="team-exp">30+ years leading landmark construction projects across India. Visionary and hands-on.
+            </p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-photo-wrap">
+            <div class="team-initials">MA</div>
+            <div class="team-overlay">
+              <a href="#" class="team-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:coo@amrconstructions.com" class="team-social-btn" aria-label="Email"><i
+                  class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Madhavi Anil</div>
+            <div class="team-role">President</div>
+            <p class="team-exp">25 years streamlining construction operations, safety protocols, and resource
+              management.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-photo-wrap">
+            <img src="assets/images/FounderKrishnaMohan.png" alt="Krishna Mohan" class="team-photo" />
+            <div class="team-overlay">
+              <a href="#" class="team-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:cto@amrconstructions.com" class="team-social-btn" aria-label="Email"><i
+                  class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Krishna Mohan</div>
+            <div class="team-role">Managing Director</div>
+            <p class="team-exp">IIT-Madras alumnus with expertise in structural engineering and large-scale
+              infrastructure.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-photo-wrap">
+            <div class="team-initials">BK</div>
+            <div class="team-overlay">
+              <a href="#" class="team-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:design@amrconstructions.com" class="team-social-btn" aria-label="Email"><i
+                  class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Bhavya krishna</div>
+            <div class="team-role">Vice president</div>
+            <p class="team-exp">Award-winning architect specialising in sustainable, liveable, and aesthetically
+              stunning designs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     CONTACT SECTION
+══════════════════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact-header reveal">
+        <div class="section-eyebrow">Contact Us</div>
+        <h2 class="section-title">Let's Build Something<br><span style="color:var(--gold)">Extraordinary
+            Together.</span></h2>
+        <div class="divider-gold"></div>
+        <p class="section-subtitle" style="text-align:center; margin: 16px auto 0;">
+          Have a project in mind? Reach out and our team will respond within 24 hours.
+          Prefer to talk? Call us at <a href="tel:+919876543210" style="color:var(--gold); font-weight:600;">+91 98765
+            43210</a>.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+
+        <!-- Trusted Clients Grid -->
+        <!-- Trusted Clients Grid -->
+        <div class="client-logos-block reveal">
+          <h3
+            style="font-family:var(--font-display); font-size:1.4rem; color:var(--navy); margin-bottom:28px; text-align:center;">
+            Trusted by Industry Leaders</h3>
+          <div class="client-grid">
+            <div class="client-logo-box"><i class="fa-brands fa-aws" style="color: #FF9900;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-google" style="color: #4285F4;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-microsoft" style="color: #00A4EF;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-apple" style="color: #555555;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-stripe" style="color: #635BFF;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-salesforce" style="color: #00A1E0;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-docker" style="color: #2496ED;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-github" style="color: #181717;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-figma" style="color: #F24E1E;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-meta" style="color: #0468FF;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-slack" style="color: #4A154B;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-cloudflare" style="color: #F38020;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-digital-ocean" style="color: #0080FF;"></i></div>
+            <div class="client-logo-box"><i class="fa-brands fa-ubuntu" style="color: #E95420;"></i></div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal reveal-delay-2">
+          <h3
+            style="font-family:var(--font-display); font-size:1.4rem; color:var(--navy); margin-bottom:28px; text-align:center;">
+            Send Us a Message</h3>
+          <form class="contact-form" id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+              <div class="form-group">
+                <label for="contact-service">Service Required</label>
+                <select id="contact-service" name="service">
+                  <option value="">Select a service…</option>
+                  <option>Residential Construction</option>
+                  <option>Commercial &amp; Retail</option>
+                  <option>Industrial &amp; Warehouse</option>
+                  <option>Infrastructure &amp; Civil</option>
+                  <option>Interior Fit-Out</option>
+                  <option>Project Management</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Project Details</label>
+              <textarea id="contact-message" name="message"
+                placeholder="Tell us about your project — location, scale, timeline, and any specific requirements…"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="contact-submit">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand Col -->
+        <div>
+          <div class="nav-logo" style="margin-bottom:0;">
+            <div class="nav-logo-mark">AMR</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">AMR Constructions</span>
+              <span class="nav-logo-sub">Est. 1994 &bull; 30 Years Strong</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Building dreams, delivering excellence, and shaping skylines across India for three
+            remarkable decades. Quality is not what we deliver — it is who we are.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About AMR</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#team">Leadership</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Residential</a></li>
+            <li><a href="#services">Commercial</a></li>
+            <li><a href="#services">Industrial</a></li>
+            <li><a href="#services">Infrastructure</a></li>
+            <li><a href="#services">Interior Fit-Out</a></li>
+            <li><a href="#services">Project Management</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links" style="gap:16px;">
+            <li style="color:rgba(255,255,255,.45); font-size:0.85rem; line-height:1.6;">
+              <a href="#contact">
+                <i class="fa-solid fa-location-dot" style="color:var(--gold); margin-right:8px;"></i>
+                12 Harbour View Road,<br>Chennai – 600 001, India
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919876543210">
+                <i class="fa-solid fa-phone" style="color:var(--gold); margin-right:8px;"></i>
+                +91 98765 43210
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@amrconstructions.com">
+                <i class="fa-solid fa-envelope" style="color:var(--gold); margin-right:8px;"></i>
+                info@amrconstructions.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 <span>AMR Constructions</span>. All rights reserved. Crafted with
+          <span style="color:var(--gold);">♥</span> in India.
+        </p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Back to Top -->
+  <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+
+</html>
