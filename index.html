@@ -36,6 +36,8 @@
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" />
+
+
 </head>
 
 <body>
@@ -97,15 +99,46 @@
     </div>
   </nav>
 
-  <!-- Mobile Nav Overlay -->
+  <!-- Mobile Nav Overlay (Premium Portal) -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#why-us">Why Us</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Get a Quote</a>
+    
+    <!-- Menu Header -->
+    <div class="mobile-nav-header">
+      <div class="nav-logo">
+        <div class="nav-logo-mark">AMR</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">AMR Constructions</span>
+        </div>
+      </div>
+      <button class="menu-close" id="menu-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div class="mobile-nav-links">
+      <a href="#about" style="--i:1">About</a>
+      <a href="#services" style="--i:2">Services</a>
+      <a href="#projects" style="--i:3">Projects</a>
+      <a href="#why-us" style="--i:4">Why Us</a>
+      <a href="#testimonials" style="--i:5">Reviews</a>
+      <a href="#team" style="--i:6">Team</a>
+      <a href="#contact" class="mobile-nav-cta" style="--i:7">Get a Quote</a>
+    </div>
+
+    <!-- Menu Footer -->
+    <div class="mobile-nav-footer">
+      <div class="mobile-contact-info">
+        <p>Talk to an expert</p>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+      </div>
+      <div class="mobile-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
   </nav>
 
 
@@ -150,25 +183,25 @@
 
         <!-- Key Stats -->
         <div class="hero-stats">
-          <div>
+          <div class="reveal reveal-delay-1">
             <div class="hero-stat-num">
               <span data-target="500" data-suffix="+">500+</span>
             </div>
             <div class="hero-stat-label">Projects Delivered</div>
           </div>
-          <div>
+          <div class="reveal reveal-delay-2">
             <div class="hero-stat-num">
               <span data-target="30" data-suffix=" Yrs">30 Yrs</span>
             </div>
             <div class="hero-stat-label">Industry Experience</div>
           </div>
-          <div>
+          <div class="reveal reveal-delay-3">
             <div class="hero-stat-num">
               <span data-target="98" data-suffix="%">98%</span>
             </div>
             <div class="hero-stat-label">Client Satisfaction</div>
           </div>
-          <div>
+          <div class="reveal reveal-delay-4">
             <div class="hero-stat-num">
               <span data-target="12" data-suffix="+">12+</span>
             </div>
@@ -264,7 +297,7 @@
 
           <!-- Value Cards -->
           <div class="about-values">
-            <div class="value-card">
+            <div class="value-card reveal">
               <div class="value-icon"><i class="fa-solid fa-trophy"></i></div>
               <div class="value-content">
                 <div class="value-title">Award-Winning Quality</div>
@@ -272,14 +305,14 @@
                 </div>
               </div>
             </div>
-            <div class="value-card">
+            <div class="value-card reveal reveal-delay-1">
               <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <div class="value-content">
                 <div class="value-title">Safety First</div>
                 <div class="value-desc">Zero-compromise safety protocols with an industry-leading safety record.</div>
               </div>
             </div>
-            <div class="value-card">
+            <div class="value-card reveal reveal-delay-2">
               <div class="value-icon"><i class="fa-solid fa-stopwatch"></i></div>
               <div class="value-content">
                 <div class="value-title">On-Time Delivery</div>
@@ -287,7 +320,7 @@
                 </div>
               </div>
             </div>
-            <div class="value-card">
+            <div class="value-card reveal reveal-delay-3">
               <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
               <div class="value-content">
                 <div class="value-title">Sustainable Builds</div>
@@ -322,69 +355,96 @@
       <div class="services-grid">
 
         <div class="service-card reveal">
-          <div class="service-icon-wrap">🏠</div>
-          <h3 class="service-title">Residential Construction</h3>
-          <p class="service-desc">
-            Custom villas, luxury apartments, and housing developments crafted with
-            meticulous attention to design, durability, and lifestyle needs.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="assets/images/project_residential.png" alt="Residential Construction">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Residential Construction</h3>
+            <p class="service-desc">
+              Custom villas, luxury apartments, and housing developments crafted with
+              meticulous attention to design, durability, and lifestyle needs.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Residential Construction';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon-wrap">🏢</div>
-          <h3 class="service-title">Commercial &amp; Retail</h3>
-          <p class="service-desc">
-            Office towers, retail complexes, and mixed-use developments designed to
-            maximise function, footfall, and long-term asset value.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="assets/images/project_commercial.png" alt="Commercial & Retail">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Commercial &amp; Retail</h3>
+            <p class="service-desc">
+              Office towers, retail complexes, and mixed-use developments designed to
+              maximise function, footfall, and long-term asset value.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Commercial & Retail';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon-wrap">🏭</div>
-          <h3 class="service-title">Industrial &amp; Warehouse</h3>
-          <p class="service-desc">
-            State-of-the-art manufacturing plants, logistics hubs, and warehouses
-            engineered for operational efficiency and rapid deployment.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="assets/images/project_industrial.png" alt="Industrial & Warehouse">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Industrial &amp; Warehouse</h3>
+            <p class="service-desc">
+              State-of-the-art manufacturing plants, logistics hubs, and warehouses
+              engineered for operational efficiency and rapid deployment.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Industrial & Warehouse';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon-wrap">🌉</div>
-          <h3 class="service-title">Infrastructure &amp; Civil</h3>
-          <p class="service-desc">
-            Roads, bridges, drainage systems, and public infrastructure built to
-            government standards for lasting societal impact.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=800&q=80"
+              alt="Infrastructure & Civil">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Infrastructure &amp; Civil</h3>
+            <p class="service-desc">
+              Roads, bridges, drainage systems, and public infrastructure built to
+              government standards for lasting societal impact.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Infrastructure & Civil';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon-wrap">🪟</div>
-          <h3 class="service-title">Interior Fit-Out</h3>
-          <p class="service-desc">
-            Premium interiors, turnkey fit-outs, and renovation projects that
-            transform raw spaces into inspiring, functional environments.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+              alt="Interior Fit-Out">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Interior Fit-Out</h3>
+            <p class="service-desc">
+              Premium interiors, turnkey fit-outs, and renovation projects that
+              transform raw spaces into inspiring, functional environments.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Interior Fit-Out';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon-wrap">📋</div>
-          <h3 class="service-title">Project Management</h3>
-          <p class="service-desc">
-            End-to-end project management, cost control, scheduling, and quality
-            assurance — keeping your project on budget and on time.
-          </p>
-          <a href="#contact" class="service-link">Enquire Now <i class="fa-solid fa-arrow-right"
-              style="font-size:0.7rem"></i></a>
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+              alt="Project Management">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Project Management</h3>
+            <p class="service-desc">
+              End-to-end project management, cost control, scheduling, and quality
+              assurance — keeping your project on budget and on time.
+            </p>
+            <a href="#contact" onclick="document.getElementById('contact-service').value='Project Management';"
+              class="service-link">Enquire Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
         </div>
 
       </div>
@@ -538,6 +598,20 @@
 ══════════════════════════════════════════════════════════════ -->
   <section id="why-us">
     <div class="container">
+
+      <!-- Unified centered header -->
+      <div class="why-unified-header reveal">
+        <div class="section-eyebrow" style="justify-content:center; color:var(--gold)">Why AMR</div>
+        <h2 class="section-title light">Our Foundation of Excellence<br><span style="color:var(--gold)">& How We Deliver
+            It.</span></h2>
+        <div class="divider-gold" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="section-subtitle light">
+          We don't just build structures; we engineer solutions. Three decades of uncompromising
+          commitment to quality, safety, and precision delivery.
+        </p>
+      </div>
+
+      <!-- Why AMR Grid -->
       <div class="why-grid">
 
         <!-- Left — Staggered Images -->
@@ -554,46 +628,27 @@
           </div>
         </div>
 
-        <!-- Right — Content & Features -->
+        <!-- Right — Features -->
         <div class="why-right reveal reveal-delay-2">
-          <div class="section-eyebrow">Why AMR</div>
-          <h2 class="section-title">The Foundation of<br>Excellence.</h2>
-          <p class="section-subtitle">
-            We don't just build structures; we engineer solutions. Our three-decade legacy is defined by an
-            uncompromising commitment to quality, safety, and operational excellence.
-          </p>
-
           <div class="why-features-list">
-
-            <!-- Feature 1 -->
-            <div class="why-feature-item">
-              <div class="feature-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
+            <div class="why-feature-item reveal">
+              <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <div class="feature-text">
                 <h4>Uncompromising Safety</h4>
                 <p>Zero LTI since 2010. We maintain the highest standards of safety across all project sites, ensuring
                   the well-being of our 1,200+ personnel.</p>
               </div>
             </div>
-
-            <!-- Feature 2 -->
-            <div class="why-feature-item">
-              <div class="feature-icon">
-                <i class="fa-solid fa-helmet-safety"></i>
-              </div>
+            <div class="why-feature-item reveal reveal-delay-1">
+              <div class="feature-icon"><i class="fa-solid fa-helmet-safety"></i></div>
               <div class="feature-text">
                 <h4>End-to-End Execution</h4>
                 <p>From structural engineering to fine finishing, our 100% in-house capabilities and fleet of 400+
                   machineries give us total control over quality.</p>
               </div>
             </div>
-
-            <!-- Feature 3 -->
-            <div class="why-feature-item">
-              <div class="feature-icon">
-                <i class="fa-regular fa-clock"></i>
-              </div>
+            <div class="why-feature-item reveal reveal-delay-2">
+              <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
               <div class="feature-text">
                 <h4>On-Time Delivery</h4>
                 <p>A proven track record of 96% on-time project completion, driven by rigorous management and 24/7
@@ -601,58 +656,49 @@
               </div>
             </div>
 
+            <div class="why-feature-item reveal reveal-delay-3">
+              <div class="feature-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="feature-text">
+                <h4>Budget-Certain Delivery</h4>
+                <p>Rigorous cost planning and value engineering ensures your project is delivered within the agreed
+                  budget — no surprise escalations, ever.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-  </section>
 
-
-  <!-- ═══════════════════════════════════════════════════════════
-     PROCESS TIMELINE
-══════════════════════════════════════════════════════════════ -->
-  <section id="process">
-    <div class="container">
-      <div style="text-align:center;" class="reveal">
-        <div class="section-eyebrow" style="justify-content:center; color:var(--gold)">How We Work</div>
-        <h2 class="section-title light">Our Proven Process</h2>
-        <div class="divider-gold" style="margin-left:auto;margin-right:auto;"></div>
-      </div>
-
+      <!-- Process Steps -->
       <div class="process-steps">
-
         <div class="process-step reveal">
           <div class="step-number">01</div>
           <h3 class="step-title">Consultation</h3>
           <p class="step-desc">We listen. Deep discovery sessions to understand your vision, budget, and timeline.</p>
         </div>
-
         <div class="process-step reveal reveal-delay-1">
           <div class="step-number">02</div>
           <h3 class="step-title">Design &amp; Plan</h3>
           <p class="step-desc">Architectural design, structural engineering, and full project planning with 3D
             visualisation.</p>
         </div>
-
         <div class="process-step reveal reveal-delay-2">
           <div class="step-number">03</div>
           <h3 class="step-title">Approvals</h3>
           <p class="step-desc">We manage all permits, regulatory approvals, and statutory clearances end-to-end.</p>
         </div>
-
         <div class="process-step reveal reveal-delay-3">
           <div class="step-number">04</div>
           <h3 class="step-title">Construction</h3>
           <p class="step-desc">Precision execution by our skilled workforce with real-time progress reporting.</p>
         </div>
-
         <div class="process-step reveal reveal-delay-4">
           <div class="step-number">05</div>
           <h3 class="step-title">Handover</h3>
           <p class="step-desc">Snagging, quality checks, and a comprehensive walkthrough before keys are handed over.
           </p>
         </div>
-
       </div>
+
     </div>
   </section>
 
@@ -848,7 +894,7 @@
         <div class="section-eyebrow" style="justify-content:center;">Leadership</div>
         <h2 class="section-title">Meet the People<br>Behind the Projects</h2>
         <div class="divider-gold" style="margin:20px auto 0;"></div>
-        <p class="section-subtitle" style="margin: 16px auto 0; text-align:center;">
+        <p class="section-subtitle">
           Our leadership team brings together decades of expertise across construction,
           engineering, design, and project management.
         </p>
@@ -941,7 +987,7 @@
         <h2 class="section-title">Let's Build Something<br><span style="color:var(--gold)">Extraordinary
             Together.</span></h2>
         <div class="divider-gold"></div>
-        <p class="section-subtitle" style="text-align:center; margin: 16px auto 0;">
+        <p class="section-subtitle">
           Have a project in mind? Reach out and our team will respond within 24 hours.
           Prefer to talk? Call us at <a href="tel:+919876543210" style="color:var(--gold); font-weight:600;">+91 98765
             43210</a>.
@@ -981,7 +1027,7 @@
           <h3
             style="font-family:var(--font-display); font-size:1.4rem; color:var(--navy); margin-bottom:28px; text-align:center;">
             Send Us a Message</h3>
-          <form class="contact-form" id="contact-form" novalidate>
+          <form class="contact-form" id="contact-form">
 
             <div class="form-row">
               <div class="form-group">
@@ -989,19 +1035,19 @@
                 <input type="text" id="contact-name" name="name" placeholder="Your name" required />
               </div>
               <div class="form-group">
-                <label for="contact-email">Email Address</label>
-                <input type="email" id="contact-email" name="email" placeholder="you@example.com" required />
+                <label for="contact-email">Email Address (Optional)</label>
+                <input type="email" id="contact-email" name="email" placeholder="you@example.com" />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-phone">Phone Number</label>
-                <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" />
+                <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" required />
               </div>
               <div class="form-group">
                 <label for="contact-service">Service Required</label>
-                <select id="contact-service" name="service">
+                <select id="contact-service" name="service" required>
                   <option value="">Select a service…</option>
                   <option>Residential Construction</option>
                   <option>Commercial &amp; Retail</option>
@@ -1016,7 +1062,7 @@
 
             <div class="form-group">
               <label for="contact-message">Project Details</label>
-              <textarea id="contact-message" name="message"
+              <textarea id="contact-message" name="message" required
                 placeholder="Tell us about your project — location, scale, timeline, and any specific requirements…"></textarea>
             </div>
 
@@ -1129,6 +1175,12 @@
     </div>
   </footer>
 
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918008863695?text=Hi%20AMR%20Constructions!%20I'm%20exploring%20your%20website%20and%20would%20like%20to%20know%20more."
+    class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <!-- Back to Top -->
   <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>

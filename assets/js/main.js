@@ -26,6 +26,13 @@ if (backTop) {
 /* ── Mobile Nav ─────────────────────────────────────────────── */
 var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobile-nav');
+var menuClose = document.getElementById('menu-close');
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 if (hamburger && mobileNav) {
   hamburger.addEventListener('click', function () {
@@ -33,12 +40,13 @@ if (hamburger && mobileNav) {
     mobileNav.classList.toggle('open');
     document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
   });
+
+  if (menuClose) {
+    menuClose.addEventListener('click', closeMenu);
+  }
+
   mobileNav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      hamburger.classList.remove('active');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
   });
 }
 
@@ -122,9 +130,12 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.5 });
 
-  document.querySelectorAll('[data-target]').forEach(function (el) {
-    counterObserver.observe(el);
-  });
+  // Delay observation until loader finishes (~3s) plus a small buffer
+  setTimeout(function() {
+    document.querySelectorAll('[data-target]').forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }, 3500);
 }
 
 
@@ -165,22 +176,52 @@ var contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    var btn = contactForm.querySelector('.form-submit');
-    btn.disabled  = true;
-    btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite">&#9881;</span> Sending&hellip;';
+    var btn = contactForm.querySelector('button[type="submit"]');
+
+    // Gather inputs
+    var name = document.getElementById('contact-name').value.trim();
+    var email = document.getElementById('contact-email').value.trim();
+    var phone = document.getElementById('contact-phone').value.trim();
+    var service = document.getElementById('contact-service').value.trim();
+    var message = document.getElementById('contact-message').value.trim();
+
+    // Basic Validation
+    if (!name || !phone || !service || !message) {
+      alert("Please fill in your Name, Phone Number, Service, and Project Details.");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite">&#9881;</span> Connecting...';
+
+    // Build Native WhatsApp Message
+    var waNumber = '918008863695';
+    var text = "Hi AMR Constructions! I'm interested in working with you.\n\n";
+    text += "*Name:* " + name + "\n";
+    if (email) text += "*Email:* " + email + "\n";
+    text += "*Phone:* " + phone + "\n";
+    text += "*Required Service:* " + service + "\n";
+    text += "\n*Project Details:*\n" + message;
+
+    var waURL = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(text);
 
     setTimeout(function () {
-      btn.innerHTML        = '&#10003; Message Sent! We will be in touch shortly.';
-      btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
-      btn.style.color      = '#fff';
-      contactForm.reset();
+      btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Redirecting to WhatsApp...';
+      btn.style.background = 'linear-gradient(135deg, #25D366, #128C7E)';
+      btn.style.color = '#fff';
+
+      // Open WhatsApp
+      window.open(waURL, '_blank');
+
+      // Reset Form State
       setTimeout(function () {
-        btn.disabled         = false;
-        btn.innerHTML        = 'Send Message &#8594;';
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane" style="margin-left:8px;font-size:0.85rem"></i>';
         btn.style.background = '';
-        btn.style.color      = '';
-      }, 4000);
-    }, 2000);
+        btn.style.color = '';
+        contactForm.reset();
+      }, 3500);
+    }, 600);
   });
 }
 
