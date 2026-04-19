@@ -2599,6 +2599,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+  /* Subtler appearance on mobile to prevent layout jumps */
+  .reveal {
+    transform: translateY(20px);
+  }
+
   #hero {
     padding: 100px 0 40px 0;
   }
@@ -2748,7 +2753,7 @@ footer {
 
 
   .loader-img-box {
-    padding: 12px 24px;
+    padding: 20px 32px;
     max-width: 85%;
   }
 

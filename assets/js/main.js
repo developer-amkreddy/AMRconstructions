@@ -90,9 +90,12 @@ dots.forEach(function (dot, i) {
   });
 });
 
-if (slides.length) {
-  goToSlide(0);
-  setTimeout(startSlideShow, 800); // start after loader dismiss
+// Will be triggered when loader dismisses
+function initSlideshow() {
+  if (slides.length) {
+    goToSlide(0);
+    startSlideShow();
+  }
 }
 
 
@@ -135,18 +138,36 @@ if ('IntersectionObserver' in window) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
         var el = e.target;
-        animateCounter(el, parseInt(el.dataset.target, 10), el.dataset.suffix || '');
+        
+        // --- Thoughtful Stagger Sync ---
+        // Wait for CSS slide-and-fade (1.2s duration) to become visible
+        // based on the stagger level (delay-1, delay-2, etc.)
+        var delayMs = 0;
+        var parentReveal = el.closest('.reveal');
+        if (parentReveal) {
+          for (var i = 1; i <= 10; i++) {
+            if (parentReveal.classList.contains('reveal-delay-' + i)) {
+              delayMs = i * 100; // delay-4 = 400ms
+              break;
+            }
+          }
+        }
+        
+        // Start counting once element is visible and slide is significantly complete
+        setTimeout(function() {
+          animateCounter(el, parseInt(el.dataset.target, 10), el.dataset.suffix || '');
+        }, delayMs + 400);
+
         counterObserver.unobserve(el);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 }); 
 
-  // Delay observation until loader dismiss
-  setTimeout(function() {
+  function initCounters() {
     document.querySelectorAll('[data-target]').forEach(function (el) {
       counterObserver.observe(el);
     });
-  }, 1000);
+  }
 }
 
 
@@ -284,3 +305,17 @@ document.head.appendChild(styleEl);
 
 /* ── Run initial state ───────────────────────────────────────── */
 onScroll();           // sets navbar state + active link immediately
+
+// Unified Entrance: Slideshow + Counters
+function startProjectEntrance() {
+  initSlideshow();
+  if (typeof initCounters === 'function') initCounters();
+}
+
+// Listen for the "Signal" from index.html
+window.addEventListener('loaderDismissed', startProjectEntrance);
+
+// Fallback: If loader is already gone when script runs
+if (document.getElementById('loader') && document.getElementById('loader').classList.contains('hidden')) {
+  startProjectEntrance();
+}

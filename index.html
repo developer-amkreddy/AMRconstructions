@@ -57,6 +57,8 @@
         l.classList.add('hidden');
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
+        // Signal that the site is ready for animations
+        window.dispatchEvent(new CustomEvent('loaderDismissed'));
       }
     }
 
@@ -66,8 +68,8 @@
       setTimeout(dismissLoader, 400); 
     });
 
-    // Max fallback: 4s
-    setTimeout(dismissLoader, 4000);
+    // Max fallback: 3.6s
+    setTimeout(dismissLoader, 3600);
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════
