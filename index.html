@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>AMR Constructions — Building Excellence Since 1994</title>
+  <title>AMR Constructions — Building Elegance Since 1994</title>
   <meta name="description"
     content="AMR Constructions — 30 years of delivering world-class residential, commercial and industrial projects. Trusted craftsmanship, cutting-edge engineering, and uncompromising quality." />
   <meta name="keywords"
@@ -14,14 +14,14 @@
   <meta name="author" content="AMR Constructions" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AMR Constructions — Building Excellence Since 1994" />
+  <meta property="og:title" content="AMR Constructions — Building Elegance Since 1994" />
   <meta property="og:description"
-    content="30 years of world-class construction. Residential, commercial, industrial." />
+    content="30 years of world-class construction. Residential, commercial, industrial. Building Elegance since 1994." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/hero.png" />
 
   <!-- Icons -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/Favicon.png" />
 
   <!-- Fonts (preconnect for speed) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,21 +46,37 @@
   <script>
     // Lock scroll while loader shows
     document.documentElement.style.overflow = 'hidden';
-    // Hide loader after animation completes (3 s) no matter what
-    setTimeout(function () {
+
+    // Smart Loader Dismissal
+    function dismissLoader() {
       var l = document.getElementById('loader');
-      if (l) { l.style.opacity = '0'; l.style.visibility = 'hidden'; l.style.pointerEvents = 'none'; }
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-    }, 3000);
+      if (l && !l.classList.contains('hidden')) {
+        l.style.opacity = '0';
+        l.style.visibility = 'hidden';
+        l.style.pointerEvents = 'none';
+        l.classList.add('hidden');
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Dismiss as soon as page is ready
+    window.addEventListener('load', function() {
+      // Small delay for cinematic feel
+      setTimeout(dismissLoader, 400); 
+    });
+
+    // Max fallback: 4s
+    setTimeout(dismissLoader, 4000);
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════
      SPLASH LOADER
 ══════════════════════════════════════════════════════════════ -->
   <div id="loader" aria-hidden="true">
-    <div class="loader-logo">AMR <span>Constructions</span></div>
-    <div class="loader-tagline">Building Excellence Since 1994</div>
+    <div class="loader-img-box">
+      <img src="assets/images/logo.png" alt="AMR Constructions Logo">
+    </div>
     <div class="loader-bar-wrap">
       <div class="loader-bar"></div>
     </div>
@@ -74,10 +90,10 @@
 
       <!-- Logo -->
       <a href="#hero" class="nav-logo" aria-label="AMR Constructions Home">
-        <div class="nav-logo-mark">AMR</div>
+        <div class="nav-logo-mark"><img src="assets/images/Favicon.png" alt="AMR Icon"></div>
         <div class="nav-logo-text">
           <span class="nav-logo-name">AMR Constructions</span>
-          <span class="nav-logo-sub">Est. 1994 &bull; 30 Years Strong</span>
+          <span class="nav-logo-sub">Building Elegance &bull; Since 1994</span>
         </div>
       </a>
 
@@ -105,7 +121,7 @@
       <!-- Menu Header -->
       <div class="mobile-nav-header">
         <div class="nav-logo">
-          <div class="nav-logo-mark">AMR</div>
+          <div class="nav-logo-mark"><img src="assets/images/Favicon.png" alt="AMR Icon"></div>
           <div class="nav-logo-text">
             <span class="nav-logo-name">AMR Constructions</span>
           </div>
@@ -130,7 +146,7 @@
       <div class="mobile-nav-footer">
         <div class="mobile-contact-info">
           <p>Talk to an expert</p>
-          <a href="tel:+919876543210">+91 98765 43210</a>
+          <a href="tel:+918008863695">+91 80088 63695</a>
         </div>
         <div class="mobile-socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -159,7 +175,7 @@
     <!-- Content -->
     <div class="container">
       <div class="hero-content">
-        <div class="hero-eyebrow">Est. 1994 &mdash; 30 Years of Craftsmanship</div>
+        <div class="hero-eyebrow">Since 1994 &mdash; 30 Years of Craftsmanship</div>
 
         <h1 class="hero-title">
           We Build the<br>
@@ -990,8 +1006,7 @@
         <div class="divider-gold"></div>
         <p class="section-subtitle">
           Have a project in mind? Reach out and our team will respond within 24 hours.
-          Prefer to talk? Call us at <a href="tel:+919876543210" style="color:var(--gold); font-weight:600;">+91 98765
-            43210</a>.
+          Prefer to talk? Call us at <a href="tel:+918008863695" style="color:var(--gold); font-weight:600;">+91 80088 63695</a>.
         </p>
       </div>
 
@@ -1044,7 +1059,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-phone">Phone Number</label>
-                <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" required />
+                <input type="tel" id="contact-phone" name="phone" placeholder="+91 80088 63695" required />
               </div>
               <div class="form-group">
                 <label for="contact-service">Service Required</label>
@@ -1089,14 +1104,14 @@
         <!-- Brand Col -->
         <div>
           <div class="nav-logo" style="margin-bottom:0;">
-            <div class="nav-logo-mark">AMR</div>
+            <div class="nav-logo-mark"><img src="assets/images/Favicon.png" alt="AMR Icon"></div>
             <div class="nav-logo-text">
               <span class="nav-logo-name">AMR Constructions</span>
-              <span class="nav-logo-sub">Est. 1994 &bull; 30 Years Strong</span>
+              <span class="nav-logo-sub">Building Elegance &bull; Since 1994</span>
             </div>
           </div>
           <p class="footer-brand-desc">
-            Building dreams, delivering excellence, and shaping skylines across India for three
+            Building dreams, delivering elegance, and shaping skylines across India for three
             remarkable decades. Quality is not what we deliver — it is who we are.
           </p>
           <div class="footer-social">
@@ -1140,13 +1155,13 @@
             <li style="color:rgba(255,255,255,.45); font-size:0.85rem; line-height:1.6;">
               <a href="#contact">
                 <i class="fa-solid fa-location-dot" style="color:var(--gold); margin-right:8px;"></i>
-                12 Harbour View Road,<br>Chennai – 600 001, India
+                12 Harbour View Road,<br>Cuddapah – 516 001, India
               </a>
             </li>
             <li>
-              <a href="tel:+919876543210">
+              <a href="tel:+918008863695">
                 <i class="fa-solid fa-phone" style="color:var(--gold); margin-right:8px;"></i>
-                +91 98765 43210
+                +91 80088 63695
               </a>
             </li>
             <li>

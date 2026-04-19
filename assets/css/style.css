@@ -121,7 +121,7 @@ ul {
 #loader {
   position: fixed;
   inset: 0;
-  background: var(--navy);
+  background: radial-gradient(circle at center, var(--navy-mid) 0%, var(--navy) 100%);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -136,49 +136,151 @@ ul {
   pointer-events: none;
 }
 
-.loader-logo {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3rem);
-  font-weight: 700;
-  color: var(--white);
-
-  letter-spacing: 0.1em;
-  animation: fadeUpIn 1s ease forwards;
+.loader-img-box {
+  background: var(--white);
+  /* Solid, clean rounded white card */
+  padding: 20px 60px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 48px;
+  max-width: 540px;
+  width: 90%;
+  animation:
+    logoBloomReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    haloPulse 5s ease-in-out infinite 1.6s;
   opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* Clips the shimmer */
+  z-index: 1;
+  /* For the ::before layering */
+
+  /* Robust Layered Rim (The Glow & Border) */
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(201, 168, 76, 0.1);
 }
 
-.loader-logo span {
-  color: var(--gold);
+/* The "Solid Rim" Frame - Decoupled from card background */
+.loader-img-box::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  /* Aligned exactly to the border edge */
+  padding: 2.5px;
+  /* The thickness of the gold frame */
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.loader-tagline {
-  font-family: var(--font-body);
-  font-size: clamp(0.55rem, 2vw, 0.75rem);
-  letter-spacing: clamp(0.2em, 0.4vw, 0.4em);
-  color: var(--grey-400);
-  margin-top: 8px;
-  text-transform: uppercase;
-  animation: fadeUpIn 1s 0.3s ease forwards;
-  opacity: 0;
+/* The "Full Sweep" Glass Shimmer */
+.loader-img-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  animation: fullGlassSweep 4s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.loader-img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes logoBloomReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.88);
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Fixed "Full Sweep" Shimmer Animation */
+@keyframes fullGlassSweep {
+  0% {
+    left: -150%;
+  }
+
+  35%,
+  100% {
+    left: 150%;
+  }
+
+  /* Completes sweep then waits */
 }
 
 .loader-bar-wrap {
-  width: 200px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 40px;
-  border-radius: 2px;
-  overflow: hidden;
-  animation: fadeUpIn 0.5s 0.6s ease forwards;
+  width: 540px;
+  max-width: 90%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 24px;
+  overflow: visible;
+  animation: fadeUpIn 1s 0.8s ease forwards;
   opacity: 0;
+  position: relative;
 }
 
 .loader-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
-  border-radius: 2px;
-  animation: loadProgress 2.2s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light));
+  box-shadow: 0 0 15px var(--gold);
+  animation: loadProgress 2.2s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes haloPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 60px rgba(201, 168, 76, 0.25);
+  }
+}
+
+@keyframes statusGlow {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+  }
 }
 
 @keyframes loadProgress {
@@ -205,7 +307,7 @@ ul {
   background: rgba(10, 22, 40, 0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  padding: 14px 0;
+  padding: 12px 0;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(201, 168, 76, .12);
 }
 
@@ -225,19 +327,41 @@ ul {
 }
 
 .nav-logo-mark {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  width: 55px;
+  background: var(--white);
+  /* Removes blue gaps */
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--navy);
-  letter-spacing: -0.02em;
+  padding: 2px 0px;
+  /* Keeps image at approx 48-50px visually */
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Luxury Metallic Frame for Navbar/Footer Logos */
+.nav-logo-mark::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  padding: 1.5px;
+  /* Delicate gold border thickness */
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nav-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .nav-logo-text {
@@ -419,7 +543,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px; /* Reduced from 60px */
+  margin-bottom: 32px;
+  /* Reduced from 60px */
 }
 
 .menu-close {
@@ -447,13 +572,15 @@ ul {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Reduced from 24px */
+  gap: 12px;
+  /* Reduced from 24px */
   flex-grow: 1;
 }
 
 .mobile-nav-links a {
   font-family: var(--font-display);
-  font-size: 1.45rem; /* Reduced from 1.7rem */
+  font-size: 1.45rem;
+  /* Reduced from 1.7rem */
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -474,7 +601,8 @@ ul {
 }
 
 .mobile-nav-cta {
-  font-size: 1.55rem !important; /* Reduced from 1.8rem */
+  font-size: 1.55rem !important;
+  /* Reduced from 1.8rem */
   color: var(--gold) !important;
   margin-top: 8px;
 }
@@ -483,10 +611,12 @@ ul {
 .mobile-nav-footer {
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 24px; /* Reduced from 40px */
+  padding-top: 24px;
+  /* Reduced from 40px */
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Reduced from 30px */
+  gap: 20px;
+  /* Reduced from 30px */
 }
 
 .mobile-contact-info p {
@@ -498,7 +628,8 @@ ul {
 }
 
 .mobile-contact-info a {
-  font-size: 1.2rem; /* Reduced from 1.4rem */
+  font-size: 1.2rem;
+  /* Reduced from 1.4rem */
   font-weight: 600;
   color: var(--white);
 }
@@ -2616,6 +2747,11 @@ footer {
   }
 
 
+  .loader-img-box {
+    padding: 12px 24px;
+    max-width: 85%;
+  }
+
   .nav-container {
     padding: 0 20px;
   }
@@ -2675,7 +2811,8 @@ footer {
 #projects .project-tag,
 #projects .project-meta,
 #projects .project-meta i {
-  color: #FFFFFF !important; /* inside dark image overlay */
+  color: #FFFFFF !important;
+  /* inside dark image overlay */
 }
 
 /* Testimonials padding & contrast */

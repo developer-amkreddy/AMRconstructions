@@ -92,7 +92,7 @@ dots.forEach(function (dot, i) {
 
 if (slides.length) {
   goToSlide(0);
-  setTimeout(startSlideShow, 3300); // start after loader finishes
+  setTimeout(startSlideShow, 800); // start after loader dismiss
 }
 
 
@@ -141,12 +141,12 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.5 });
 
-  // Delay observation until loader finishes (~3s) plus a small buffer
+  // Delay observation until loader dismiss
   setTimeout(function() {
     document.querySelectorAll('[data-target]').forEach(function (el) {
       counterObserver.observe(el);
     });
-  }, 3500);
+  }, 1000);
 }
 
 
