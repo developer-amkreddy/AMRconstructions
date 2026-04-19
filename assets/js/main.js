@@ -41,14 +41,21 @@ if (hamburger && mobileNav) {
     document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
   });
 
+  // Close when clicking the backdrop (the area outside the drawer)
+  mobileNav.addEventListener('click', function (e) {
+    if (e.target === mobileNav) {
+      closeMenu();
+    }
+  });
+
   if (menuClose) {
     menuClose.addEventListener('click', closeMenu);
   }
 
   mobileNav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function() {
-      // Small delay allows the browser to process the anchor link navigation 
-      // before closeMenu makes the container non-interactive (pointer-events: none)
+      // Short delay ensures the browser registers the anchor navigation/scroll 
+      // before the drawer slides out and becomes non-interactive.
       setTimeout(closeMenu, 150);
     });
   });
