@@ -46,30 +46,45 @@
   <script>
     // Lock scroll while loader shows
     document.documentElement.style.overflow = 'hidden';
+    var loaderStartTime = Date.now();
 
     // Smart Loader Dismissal
     function dismissLoader() {
-      var l = document.getElementById('loader');
-      if (l && !l.classList.contains('hidden')) {
-        l.style.opacity = '0';
-        l.style.visibility = 'hidden';
-        l.style.pointerEvents = 'none';
-        l.classList.add('hidden');
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        // Signal that the site is ready for animations
-        window.dispatchEvent(new CustomEvent('loaderDismissed'));
-      }
+      var elapsed = Date.now() - loaderStartTime;
+      // We want at least 1.5s of branding, but no extra delay if page took longer to load
+      var remaining = Math.max(0, 1500 - elapsed);
+
+      setTimeout(function () {
+        var l = document.getElementById('loader');
+        if (l && !l.classList.contains('hidden')) {
+          l.style.opacity = '0';
+          l.style.visibility = 'hidden';
+          l.style.pointerEvents = 'none';
+
+          // Wait for the 0.8s CSS fade to complete
+          setTimeout(function () {
+            l.classList.add('hidden');
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.classList.add('page-loaded');
+
+            // Signal that the site is ready for animations (Persistent Flag + Event)
+            window.AMR_LOADER_DONE = true;
+            window.dispatchEvent(new CustomEvent('loaderDismissed'));
+          }, 800);
+        }
+      }, remaining);
     }
 
     // Dismiss as soon as page is ready
-    window.addEventListener('load', function() {
-      // Small delay for cinematic feel
-      setTimeout(dismissLoader, 400); 
-    });
+    if (document.readyState === 'complete') {
+      dismissLoader();
+    } else {
+      window.addEventListener('load', dismissLoader);
+    }
 
-    // Max fallback: 3.6s
-    setTimeout(dismissLoader, 3600);
+    // Absolute Max hard fallback: 4s (ensures site always opens)
+    setTimeout(dismissLoader, 4000);
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -202,25 +217,25 @@
 
         <!-- Key Stats -->
         <div class="hero-stats">
-          <div class="reveal reveal-delay-1">
+          <div class="hero-stat-item stagger-1">
             <div class="hero-stat-num">
               <span data-target="500" data-suffix="+">500+</span>
             </div>
             <div class="hero-stat-label">Projects Delivered</div>
           </div>
-          <div class="reveal reveal-delay-2">
+          <div class="hero-stat-item stagger-2">
             <div class="hero-stat-num">
               <span data-target="30" data-suffix=" Yrs">30 Yrs</span>
             </div>
             <div class="hero-stat-label">Industry Experience</div>
           </div>
-          <div class="reveal reveal-delay-3">
+          <div class="hero-stat-item stagger-3">
             <div class="hero-stat-num">
               <span data-target="98" data-suffix="%">98%</span>
             </div>
             <div class="hero-stat-label">Client Satisfaction</div>
           </div>
-          <div class="reveal reveal-delay-4">
+          <div class="hero-stat-item stagger-4">
             <div class="hero-stat-num">
               <span data-target="12" data-suffix="+">12+</span>
             </div>
@@ -1008,7 +1023,8 @@
         <div class="divider-gold"></div>
         <p class="section-subtitle">
           Have a project in mind? Reach out and our team will respond within 24 hours.
-          Prefer to talk? Call us at <a href="tel:+918008863695" style="color:var(--gold); font-weight:600;">+91 80088 63695</a>.
+          Prefer to talk? Call us at <a href="tel:+918008863695" style="color:var(--gold); font-weight:600;">+91 80088
+            63695</a>.
         </p>
       </div>
 
@@ -1204,7 +1220,24 @@
   <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=2.5"></script>
+
+  <!-- Final Safety Handshake: ensuring animations trigger if loader finished early -->
+  <script>
+    (function () {
+      var retries = 0;
+      function tryTrigger() {
+        if (window.AMR_LOADER_DONE && typeof startProjectEntrance === 'function') {
+          console.log('[AMR] Safety Handshake Success: Triggering Entrance');
+          startProjectEntrance();
+        } else if (!window.AMR_ENTRANCE_DONE && retries < 50) {
+          retries++;
+          setTimeout(tryTrigger, 100);
+        }
+      }
+      tryTrigger();
+    })();
+  </script>
 
 </body>
 

@@ -100,22 +100,27 @@ function initSlideshow() {
 
 
 /* ── Scroll Reveal ──────────────────────────────────────────── */
-var revealEls = Array.from(document.querySelectorAll('.reveal'));
+var revealObserver;
+function initScrollReveal() {
+  var revealEls = Array.from(document.querySelectorAll('.reveal'));
+  
+  if ('IntersectionObserver' in window) {
+    if (revealObserver) revealObserver.disconnect();
+    
+    revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10 });
 
-if ('IntersectionObserver' in window) {
-  var revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.10 });
-
-  revealEls.forEach(function (el) { revealObserver.observe(el); });
-} else {
-  /* Fallback for browsers without IntersectionObserver */
-  revealEls.forEach(function (el) { el.classList.add('visible'); });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    /* Fallback for browsers without IntersectionObserver */
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
 }
 
 
@@ -155,6 +160,7 @@ if ('IntersectionObserver' in window) {
         
         // Start counting once element is visible and slide is significantly complete
         setTimeout(function() {
+          console.log('[AMR] Counter Triggered:', el.dataset.target);
           animateCounter(el, parseInt(el.dataset.target, 10), el.dataset.suffix || '');
         }, delayMs + 400);
 
@@ -162,8 +168,10 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.1 }); 
+}
 
-  function initCounters() {
+function initCounters() {
+  if (typeof counterObserver !== 'undefined') {
     document.querySelectorAll('[data-target]').forEach(function (el) {
       counterObserver.observe(el);
     });
@@ -306,16 +314,42 @@ document.head.appendChild(styleEl);
 /* ── Run initial state ───────────────────────────────────────── */
 onScroll();           // sets navbar state + active link immediately
 
-// Unified Entrance: Slideshow + Counters
+// Unified Entrance: Slideshow + Counters + Scroll Reveal
 function startProjectEntrance() {
+  if (window.AMR_ENTRANCE_DONE) return; // Prevent double trigger
+  window.AMR_ENTRANCE_DONE = true;
+  console.log('[AMR] Initializing Unified Entrance');
+  
+  // 1. Start the reveal system (now that loader is gone)
+  initScrollReveal();
+  
+  // 2. Force hero elements to show immediately (Safety bypass)
+  document.querySelectorAll('#hero .reveal').forEach(function(el) {
+    el.classList.add('visible');
+  });
+  console.log('[AMR] Hero elements forced to visible');
+
+  // 3. Start interactive components
   initSlideshow();
-  if (typeof initCounters === 'function') initCounters();
+  initCounters();
 }
 
-// Listen for the "Signal" from index.html
-window.addEventListener('loaderDismissed', startProjectEntrance);
+// 1. Listen for the "Signal" (Real-time trigger)
+window.addEventListener('loaderDismissed', function() {
+  console.log('[AMR] Event Received: loaderDismissed');
+  startProjectEntrance();
+});
 
-// Fallback: If loader is already gone when script runs
-if (document.getElementById('loader') && document.getElementById('loader').classList.contains('hidden')) {
+// 2. Persistent Check (Flag-based fallback for refresh/cache)
+if (window.AMR_LOADER_DONE) {
+  console.log('[AMR] Flag Check: Loader already done');
   startProjectEntrance();
 }
+
+// 3. Document visibility fallback
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'visible' && window.AMR_LOADER_DONE) {
+    console.log('[AMR] Visibility Change: Triggering Entrance');
+    startProjectEntrance();
+  }
+});
