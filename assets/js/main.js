@@ -46,7 +46,11 @@ if (hamburger && mobileNav) {
   }
 
   mobileNav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', function() {
+      // Small delay allows the browser to process the anchor link navigation 
+      // before closeMenu makes the container non-interactive (pointer-events: none)
+      setTimeout(closeMenu, 150);
+    });
   });
 }
 
