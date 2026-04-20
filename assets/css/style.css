@@ -339,6 +339,7 @@ ul {
   flex-shrink: 0;
   position: relative;
   z-index: 1;
+  overflow: hidden; /* Clips the rectangular image background to the parent's radius */
 }
 
 /* Luxury Metallic Frame for Navbar/Footer Logos */
@@ -362,6 +363,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: inherit; /* Ensures the image itself is clipped if it has a background */
 }
 
 .nav-logo-text {
