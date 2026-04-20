@@ -860,10 +860,29 @@ body.page-loaded .hero-stats {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-body.page-loaded .hero-stat-item.stagger-1 { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
-body.page-loaded .hero-stat-item.stagger-2 { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
-body.page-loaded .hero-stat-item.stagger-3 { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
-body.page-loaded .hero-stat-item.stagger-4 { opacity: 1; transform: translateY(0); transition-delay: 0.9s; }
+body.page-loaded .hero-stat-item.stagger-1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+body.page-loaded .hero-stat-item.stagger-2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+body.page-loaded .hero-stat-item.stagger-3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+body.page-loaded .hero-stat-item.stagger-4 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
 
 .hero-stat-num {
   font-family: var(--font-heading);
@@ -2646,6 +2665,7 @@ footer {
 }
 
 @media (max-width: 600px) {
+
   /* Subtler appearance on mobile to prevent layout jumps */
   .reveal {
     transform: translateY(20px);
