@@ -2169,12 +2169,16 @@ section {
 }
 
 .client-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 }
 
 .client-logo-box {
+  flex: 1 1 calc(33.333% - 16px);
+  min-width: 180px;
+  max-width: 350px;
   background: var(--white);
   border-radius: var(--radius-sm);
   height: 120px;
@@ -2182,14 +2186,26 @@ section {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-sm);
-  font-size: 3rem;
   transition: var(--transition);
   cursor: pointer;
+  padding: 15px;
+}
+
+.client-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: var(--transition);
 }
 
 .client-logo-box:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.client-logo-box:hover img {
+  transform: scale(1.05);
 }
 
 .contact-header .section-eyebrow {
